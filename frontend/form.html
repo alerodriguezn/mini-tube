@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        h1 {
+          color: white;
+        }
+
+        body {
+          background-color: #01021eff;
+        }
+
+        .field {
+          background-color: #1e293b;
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          border: none;
+          margin-bottom: 1rem;
+          width: 400px;
+        }
+      }
+    </style>
+ 
+
+    <form
+      id="main-form"
+      class="flex flex-col items-center justify-center mt-8"
+    >
+      <h1 class="text-2xl font-bold mb-4">Add New Video</h1>
+
+      <input id="title" type="text" name="title" placeholder="Title"  class="field"/>
+      <input
+        id="creationDate"
+        type="date"
+        name="creationDate"
+        placeholder="Creation Date"
+        class="field"
+      />
+      <input
+        id="description"
+        type="text"
+        name="description"
+        placeholder="Description"
+        class="field"
+        
+      />
+      <div class="flex flex-col gap-2">
+        <label for="" class="text-white font-bold">
+            Select a video to upload
+        </label>
+        <input id="video" type="file" name="video" placeholder="Video" class="field" />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="" class="text-white font-bold">
+          Select a thumbnail to upload
+        </label>
+        <input
+        class="field"
+        id="thumbnail"
+        type="file"
+        name="thumbnail"
+        placeholder="Thumbnail"
+      />
+
+      </div>
+    
+      
+      <button id="closeForm"  class="bg-red-600 w-[400px] text-white p-2 rounded-lg font-bold mb-3">Cancel</button>
+      <button id="addVideo" type="submit" class="bg-green-600 w-[400px] text-white p-2 rounded-lg font-bold">Submit</button>
+    </form>
+
+  </body>
+</html>
