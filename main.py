@@ -82,3 +82,11 @@ async def add_video(
         return JSONResponse(
             content={"message": "File could not be saved"}, status_code=400
         )
+        
+        
+@app.put("/increase-view-count/{video_id}")
+def increase_view_count(video_id: int, db: Session = Depends(get_db)):
+    video = db.query(model.Videos).filter(model.Videos.id == video_id).first()
+    video.viewsCount += 1
+    db.commit()
+    return JSONResponse(content={"message": "View count increased"}, status_code=200)
